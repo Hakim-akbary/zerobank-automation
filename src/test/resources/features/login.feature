@@ -1,12 +1,22 @@
-Feature:
+Feature:"TC Login Scenarios"
 
 
-  Scenario:
+  Scenario: "Valid Credentials"
     Given the user navigates to the webpage
     When the user clicks on the signinButton
-    Then the user logs in with "username" "password"
+    And the user logs in with "username" "password"
+    Then the user clicks on the "Advacned"
 
-    Scenario:
+    Scenario: "Invalid Credentials"
       Given the user navigates to the webpage
       When  the user clicks on the signinButton
-      Then the users logs in with
+      And the user logs in with "HakimAkbary" "password"
+      Then the user should see "Login and/or password are wrong."
+      
+      Scenario: "Login with Empty Information"
+      Given the user navigates to the webpage
+      When the user navigates to the webpage
+        When the user clicks on the signinButton
+        And the user logs in with "" ""
+        Then the user should see "Login and/or password are wrong."
+        

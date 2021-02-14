@@ -12,6 +12,12 @@ public class Login {
         PageFactory.initElements(Driver.get(), this);
     }
 
+    @FindBy (xpath = "//div[@class='alert alert-error']")
+    public WebElement errorMessage;
+   // String errormessage = errorMessage.getText();
+
+    @FindBy (xpath = "//input[@name='submit']")
+    public WebElement toSignin;
 
     @FindBy (xpath = "//button[@id='signin_button']")
     public WebElement signInButton;
@@ -22,8 +28,12 @@ public class Login {
     @FindBy(css = "#user_password")
     public WebElement passwordInput;
 
-    @FindBy (xpath = "//div[@class='alert alert-error']")
-    public WebElement errorMessage;
+    @FindBy (xpath = "//button[@id='details-button']")
+    public WebElement AdvancedButton;
+
+    @FindBy (xpath = "(//*[. = 'Proceed to zero.webappsecurity.com (unsafe)'])[2]")
+    public WebElement proceedLink;
+
 
     public void login (){
 
