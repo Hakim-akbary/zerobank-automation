@@ -1,5 +1,7 @@
 package com.bitrix.pages;
 
+import com.bitrix.utilities.BrowserUtils;
+import com.bitrix.utilities.ConfigurationReader;
 import com.bitrix.utilities.Driver;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.WebElement;
@@ -35,20 +37,26 @@ public class Login {
     public WebElement proceedLink;
 
 
-    public void login (){
-
-    signInButton.click();
 
 
 
-}
 
-    public void loginWithWrongCredentials(){
 
-        Faker faker = new Faker();
 
-        userNameInput.sendKeys(faker.name().fullName());
-        passwordInput.sendKeys(faker.finance().creditCard());
+    public void login(){
+
+            Login login = new Login();
+
+        login.userNameInput.sendKeys(ConfigurationReader.get("username"));
+        login.passwordInput.sendKeys(ConfigurationReader.get("password"));
+        login.toSignin.click();
+
+        BrowserUtils.waitForVisibility(login.AdvancedButton, 5);
+        login.AdvancedButton.click();
+
+
+        BrowserUtils.waitForVisibility(login.proceedLink, 5);
+        login.proceedLink.click();
 
     }
 }

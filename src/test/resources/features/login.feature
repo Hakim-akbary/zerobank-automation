@@ -1,11 +1,11 @@
 Feature:"TC Login Scenarios"
 
-
+  #@wip
   Scenario: "Valid Credentials"
     Given the user navigates to the webpage
     When the user clicks on the signinButton
     And the user logs in with "username" "password"
-    Then the user clicks on the "Advacned"
+    Then the user clicks on the "Advanced"
 
     Scenario: "Invalid Credentials"
       Given the user navigates to the webpage

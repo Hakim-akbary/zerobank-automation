@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class AccountSummary {
+public class AccountSummary extends Login {
 
     //public AccountSummary(){PageFactory.initElements(Driver.get(), this);}
 
@@ -17,6 +17,21 @@ public class AccountSummary {
 
     @FindBy (xpath = "//h2[@class='board-header']")
     public List<WebElement> accountTypes;
+
+    @FindBy (css = ".offset2.span8")
+    public WebElement table;
+
+    @FindBy (xpath = "(//table[@class='table'])[3]//th")
+    public List<WebElement> creditAccountsTable;
+
+    @FindBy (xpath = "(//a[text()='Savings'])[1]")
+    public WebElement savingsLink;
+
+    @FindBy(css = "#aa_accountId")
+    public WebElement accountDropDown;
+
+    @FindBy(xpath = "//a[text()='Brokerage']")
+    public WebElement brokerageLink;
 
   //  @FindBy (xpath = "(//h2[@class='board-header'])[2]")
   //  public WebElement investmentAccounts;

@@ -11,8 +11,8 @@ import org.junit.runner.RunWith;
                 "html:target/default-html-reports"},
         features = "src/test/resources/features",
         glue = "com/bitrix/step_definitions",
-        dryRun = false)
-        //tags = "@wip")
+        dryRun = false,
+        tags = "@wip")
 
 public class CukeRunners {
 
