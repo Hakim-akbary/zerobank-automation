@@ -33,6 +33,9 @@ public class AccountSummary extends Login {
     @FindBy(xpath = "//a[text()='Brokerage']")
     public WebElement brokerageLink;
 
+    @FindBy (xpath = "//a[text()='Account Activity']")
+    public WebElement accountActivityTab;
+
   //  @FindBy (xpath = "(//h2[@class='board-header'])[2]")
   //  public WebElement investmentAccounts;
 

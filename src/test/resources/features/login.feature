@@ -1,6 +1,6 @@
 Feature:"TC Login Scenarios"
 
-  #@wip
+
   Scenario: "Valid Credentials"
     Given the user navigates to the webpage
     When the user clicks on the signinButton

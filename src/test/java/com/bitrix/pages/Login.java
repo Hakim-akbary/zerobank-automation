@@ -47,6 +47,12 @@ public class Login {
 
             Login login = new Login();
 
+        String url = ConfigurationReader.get("url");
+        Driver.get().get(url);
+        BrowserUtils.waitForVisibility(login.signInButton, 5);
+        login.signInButton.click();
+
+
         login.userNameInput.sendKeys(ConfigurationReader.get("username"));
         login.passwordInput.sendKeys(ConfigurationReader.get("password"));
         login.toSignin.click();
@@ -57,6 +63,9 @@ public class Login {
 
         BrowserUtils.waitForVisibility(login.proceedLink, 5);
         login.proceedLink.click();
+
+
+
 
     }
 }
